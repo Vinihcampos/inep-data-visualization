@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
+from collections import Counter as C
 
 matriculados = pd.read_csv('../prepared_csv/matriculados.csv')
 concluintes = pd.read_csv('../prepared_csv/concluintes.csv')
@@ -104,6 +105,11 @@ central_tendency_std_matriculados.append( "%.2f" % np.std(matriculados_2011) )
 central_tendency_std_matriculados.append( "%.2f" % np.std(matriculados_2012) )
 central_tendency_std_matriculados.append( "%.2f" % np.std(matriculados_2013) )
 
+central_tendency_modes_matriculados.append( C(matriculados_2010).most_common(1)[0][1] )
+central_tendency_modes_matriculados.append( C(matriculados_2011).most_common(1)[0][1] )
+central_tendency_modes_matriculados.append( C(matriculados_2012).most_common(1)[0][1] )
+central_tendency_modes_matriculados.append( C(matriculados_2013).most_common(1)[0][1] )
+
 #Central tendencies of graduated
 central_tendency_means_concluintes.append( "%.2f" % (sum(concluintes_2010) / len(concluintes_2010)) )
 central_tendency_means_concluintes.append( "%.2f" % (sum(concluintes_2011) / len(concluintes_2011)) )
@@ -119,6 +125,11 @@ central_tendency_std_concluintes.append( "%.2f" % np.std(concluintes_2010) )
 central_tendency_std_concluintes.append( "%.2f" % np.std(concluintes_2011) )
 central_tendency_std_concluintes.append( "%.2f" % np.std(concluintes_2012) )
 central_tendency_std_concluintes.append( "%.2f" % np.std(concluintes_2013) )
+
+central_tendency_modes_concluintes.append( C(concluintes_2010).most_common(1)[0][1] )
+central_tendency_modes_concluintes.append( C(concluintes_2011).most_common(1)[0][1] )
+central_tendency_modes_concluintes.append( C(concluintes_2012).most_common(1)[0][1] )
+central_tendency_modes_concluintes.append( C(concluintes_2013).most_common(1)[0][1] )
 
 print ("Central tendencies (enrolled): ")
 print ("means: ", end='')
@@ -151,6 +162,7 @@ def plot_enrolled(N, ind, width, fig, ax):
 	rects1 = ax.bar(ind, central_tendency_means_matriculados, width, color='r')
 	rects2 = ax.bar(ind + width, central_tendency_medians_matriculados, width, color='y')
 	rects3 = ax.bar(ind + 2*width, central_tendency_std_matriculados, width, color='g')
+	rects4 = ax.bar(ind + 3*width, central_tendency_modes_matriculados, width, color='b')
 	
 	# add some text for labels, title and axes ticks
 	ax.set_ylabel('Means, Medians and Standard Deviations')
@@ -159,34 +171,38 @@ def plot_enrolled(N, ind, width, fig, ax):
 	ax.set_xticks(ind + width)
 	ax.set_xticklabels(('2010', '2011', '2012', '2013'))
 	
-	ax.legend((rects1[0], rects2[0], rects3[0]), ('Means', 'Medians', 'Standard Deviations'))
+	ax.legend((rects1[0], rects2[0], rects3[0], rects4[0]), ('Means', 'Medians', 'Standard Deviations', 'Modes'))
 	autolabel(rects1)
 	autolabel(rects2)
 	autolabel(rects3)
+	autolabel(rects4)
 	plt.show()
 
 def plot_graduated(N, ind, width, fig, ax):
 	rects1 = ax.bar(ind, central_tendency_means_concluintes, width, color='r')
 	rects2 = ax.bar(ind + width, central_tendency_medians_concluintes, width, color='y')
 	rects3 = ax.bar(ind + 2*width, central_tendency_std_concluintes, width, color='g')
+	rects4 = ax.bar(ind + 3*width, central_tendency_modes_concluintes, width, color='b')
 	
 	# add some text for labels, title and axes ticks
 	ax.set_ylabel('Means, Medians and Standard Deviations')
 	ax.set_title('Central tendencies of graduated students')
 	ax.set_yticks(np.arange(0, 400, 50))
-	ax.set_xticks(ind + width)
+	ax.set_xticks(ind + width * 1.5)
 	ax.set_xticklabels(('2010', '2011', '2012', '2013'))
 	
-	ax.legend((rects1[0], rects2[0], rects3[0]), ('Means', 'Medians', 'Standard Deviations'))
+	ax.legend((rects1[0], rects2[0], rects3[0], rects4[0]), ('Means', 'Medians', 'Standard Deviations', 'Modes'))
 	autolabel(rects1)
 	autolabel(rects2)
 	autolabel(rects3)	
+	autolabel(rects4)
 	plt.show()
 
 
 N = 4
 ind = np.arange(N)  # the x locations for the groups
-width = 0.3       # the width of the bars
+width = 0.23       # the width of the bars
 fig, ax = plt.subplots()
 
 plot_enrolled(N, ind, width, fig, ax)
+
