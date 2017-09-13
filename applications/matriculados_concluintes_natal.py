@@ -16,6 +16,9 @@ for i in courses_matriculados:
 	central_tendency_matriculados[i].append(np.mean(matriculados[i]))
 	central_tendency_matriculados[i].append(np.median(matriculados[i]))
 	central_tendency_matriculados[i].append("%.2f" % np.std(matriculados[i]))
+	central_tendency_matriculados[i].append(C(matriculados[i]).most_common(1)[0][0])
+	central_tendency_matriculados[i].append(min(matriculados[i]))
+	central_tendency_matriculados[i].append(max(matriculados[i]))
 
 	key = i
 
@@ -24,6 +27,9 @@ for i in courses_matriculados:
 		central_tendency_concluintes[i].append(np.mean(concluintes[i]))
 		central_tendency_concluintes[i].append(np.median(concluintes[i]))
 		central_tendency_concluintes[i].append("%.2f" % np.std(concluintes[i]))
+		central_tendency_concluintes[i].append(C(concluintes[i]).most_common(1)[0][0])
+		central_tendency_concluintes[i].append(min(concluintes[i]))
+		central_tendency_concluintes[i].append(max(concluintes[i]))
 
 matriculados_2010 = []
 matriculados_2011 = []
@@ -131,6 +137,7 @@ central_tendency_modes_concluintes.append( C(concluintes_2011).most_common(1)[0]
 central_tendency_modes_concluintes.append( C(concluintes_2012).most_common(1)[0][1] )
 central_tendency_modes_concluintes.append( C(concluintes_2013).most_common(1)[0][1] )
 
+"""
 print ("Central tendencies (enrolled): ")
 print ("means: ", end='')
 print(central_tendency_means_matriculados)
@@ -146,6 +153,7 @@ print ("medians: ", end='')
 print(central_tendency_medians_concluintes)
 print ("stds: ", end='')
 print(central_tendency_std_concluintes)
+"""
 
 def autolabel(rects):
     """
@@ -167,8 +175,8 @@ def plot_enrolled(N, ind, width, fig, ax):
 	# add some text for labels, title and axes ticks
 	ax.set_ylabel('Means, Medians and Standard Deviations')
 	ax.set_title('Central tendencies of enrolled students')
-	ax.set_yticks(np.arange(0, 2000, 200))
-	ax.set_xticks(ind + width)
+	ax.set_yticks(np.arange(0, 2200, 200))
+	ax.set_xticks(ind + width * 1.5)
 	ax.set_xticklabels(('2010', '2011', '2012', '2013'))
 	
 	ax.legend((rects1[0], rects2[0], rects3[0], rects4[0]), ('Means', 'Medians', 'Standard Deviations', 'Modes'))
@@ -205,4 +213,35 @@ width = 0.23       # the width of the bars
 fig, ax = plt.subplots()
 
 plot_enrolled(N, ind, width, fig, ax)
+plot_graduated(N, ind, width, fig, ax)
 
+"""
+#Create CSV for central tendencies
+cursos_csv = {'CURSO' : [], 'MÉDIA': [], 'MEDIANA': [], 'DESVIO PADRÃO': [], 'MODA': [], 'MIN': [], 'MAX': []}
+
+for i in central_tendency_matriculados:
+	cursos_csv['CURSO'].append(i)
+	cursos_csv['MÉDIA'].append(central_tendency_matriculados[i][0])
+	cursos_csv['MEDIANA'].append(central_tendency_matriculados[i][1])
+	cursos_csv['DESVIO PADRÃO'].append(central_tendency_matriculados[i][2])
+	cursos_csv['MODA'].append(central_tendency_matriculados[i][3])
+	cursos_csv['MIN'].append(central_tendency_matriculados[i][4])
+	cursos_csv['MAX'].append(central_tendency_matriculados[i][5])
+
+pd.DataFrame(cursos_csv).to_csv('../prepared_csv/central_tendency_enrolled.csv', encoding='utf-8', index=False,
+	columns=['CURSO', 'MÉDIA', 'MEDIANA', 'DESVIO PADRÃO', 'MODA', 'MIN', 'MAX'])
+
+cursos_csv = {'CURSO' : [], 'MÉDIA': [], 'MEDIANA': [], 'DESVIO PADRÃO': [], 'MODA': [], 'MIN': [], 'MAX': []}
+
+for i in central_tendency_concluintes:
+	cursos_csv['CURSO'].append(i)
+	cursos_csv['MÉDIA'].append(central_tendency_concluintes[i][0])
+	cursos_csv['MEDIANA'].append(central_tendency_concluintes[i][1])
+	cursos_csv['DESVIO PADRÃO'].append(central_tendency_concluintes[i][2])
+	cursos_csv['MODA'].append(central_tendency_concluintes[i][3])
+	cursos_csv['MIN'].append(central_tendency_concluintes[i][4])
+	cursos_csv['MAX'].append(central_tendency_concluintes[i][5])
+
+pd.DataFrame(cursos_csv).to_csv('../prepared_csv/central_tendency_graduated.csv', encoding='utf-8', index=False,
+	columns=['CURSO', 'MÉDIA', 'MEDIANA', 'DESVIO PADRÃO', 'MODA', 'MIN', 'MAX'])
+"""
