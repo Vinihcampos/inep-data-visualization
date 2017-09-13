@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
@@ -9,6 +10,17 @@ concluintes = pd.read_csv('../prepared_csv/concluintes.csv')
 central_tendency_matriculados = {}
 central_tendency_concluintes = {}
 courses_matriculados = matriculados.columns.tolist()
+courses_concluintes = concluintes.columns.tolist()
+
+scatter_matriculados_2010 = []
+scatter_matriculados_2011 = []
+scatter_matriculados_2012 = []
+scatter_matriculados_2013 = []
+
+scatter_concluintes_2010 = []
+scatter_concluintes_2011 = []
+scatter_concluintes_2012 = []
+scatter_concluintes_2013 = []
 
 #Populating central_tendency_matriculados
 for i in courses_matriculados:
@@ -18,12 +30,25 @@ for i in courses_matriculados:
 	central_tendency_matriculados[i].append("%.2f" % np.std(matriculados[i]))
 
 	key = i
-
 	if key in concluintes:
 		central_tendency_concluintes[i] = []
 		central_tendency_concluintes[i].append(np.mean(concluintes[i]))
 		central_tendency_concluintes[i].append(np.median(concluintes[i]))
 		central_tendency_concluintes[i].append("%.2f" % np.std(concluintes[i]))
+
+	if key in courses_concluintes:
+		scatter_matriculados_2010.append(matriculados[i][0])
+		scatter_matriculados_2011.append(matriculados[i][1])
+		scatter_matriculados_2012.append(matriculados[i][2])
+		scatter_matriculados_2013.append(matriculados[i][3])
+
+for i in courses_concluintes:
+	if i in courses_matriculados:
+		scatter_concluintes_2010.append(concluintes[i][0])
+		scatter_concluintes_2011.append(concluintes[i][1])
+		scatter_concluintes_2012.append(concluintes[i][2])
+		scatter_concluintes_2013.append(concluintes[i][3])
+
 
 matriculados_2010 = []
 matriculados_2011 = []
@@ -31,10 +56,12 @@ matriculados_2012 = []
 matriculados_2013 = []
 
 for i in courses_matriculados:
-	matriculados_2010.append(matriculados[i][0])
-	matriculados_2011.append(matriculados[i][1])
-	matriculados_2012.append(matriculados[i][2])
-	matriculados_2013.append(matriculados[i][3])
+	key = i
+	if key in matriculados: 
+		matriculados_2010.append(matriculados[i][0])
+		matriculados_2011.append(matriculados[i][1])
+		matriculados_2012.append(matriculados[i][2])
+		matriculados_2013.append(matriculados[i][3])
 
 concluintes_2010 = []
 concluintes_2011 = []
@@ -131,21 +158,41 @@ central_tendency_modes_concluintes.append( C(concluintes_2011).most_common(1)[0]
 central_tendency_modes_concluintes.append( C(concluintes_2012).most_common(1)[0][1] )
 central_tendency_modes_concluintes.append( C(concluintes_2013).most_common(1)[0][1] )
 
-print ("Central tendencies (enrolled): ")
-print ("means: ", end='')
-print(central_tendency_means_matriculados)
-print ("medians: ", end='')
-print(central_tendency_medians_matriculados)
-print ("stds: ", end='')
-print(central_tendency_std_matriculados)
+# print ("Central tendencies (enrolled): ")
+# print ("means: ", end='')
+# print(central_tendency_means_matriculados)
+# print ("medians: ", end='')
+# print(central_tendency_medians_matriculados)
+# print ("stds: ", end='')
+# print(central_tendency_std_matriculados)
 
-print ("Central tendencies (graduated): ")
-print ("means: ", end='')
-print(central_tendency_means_concluintes)
-print ("medians: ", end='')
-print(central_tendency_medians_concluintes)
-print ("stds: ", end='')
-print(central_tendency_std_concluintes)
+# print ("Central tendencies (graduated): ")
+# print ("means: ", end='')
+# print(central_tendency_means_concluintes)
+# print ("medians: ", end='')
+# print(central_tendency_medians_concluintes)
+# print ("stds: ", end='')
+# print(central_tendency_std_concluintes)
+
+
+# Gráfico de dispersão:
+
+plt.ylabel("Concluintes")
+plt.xlabel("Matriculados")
+a2010 = plt.scatter(scatter_matriculados_2010, scatter_concluintes_2010, marker="o", color="red") 
+a2011 = plt.scatter(scatter_matriculados_2011, scatter_concluintes_2011, marker="o", color="blue") 
+a2012 = plt.scatter(scatter_matriculados_2012, scatter_concluintes_2012, marker="o", color="green") 
+a2013 = plt.scatter(scatter_matriculados_2013, scatter_concluintes_2013, marker="o", color="gray") 
+
+plt.legend((a2010, a2011, a2012, a2013),
+           ('2010', '2011', '2012', '2013'),
+           scatterpoints=1,
+           loc='lower right',
+           ncol=3,
+           fontsize=8)
+
+plt.show()
+
 
 def autolabel(rects):
     """
