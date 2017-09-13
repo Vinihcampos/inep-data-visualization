@@ -1,0 +1,836 @@
+<html>
+	<head>   
+		<meta charset="utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+		<script src="https://code.highcharts.com/modules/treemap.js"></script>
+	</head>
+	<body>
+		<div id="container"></div>
+
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				colorAxis: {
+		            min: 1,
+		            max: 160,
+		            type: 'logarithmic',
+		            minColor: '#8E0E00',
+		            maxColor: '#1F1C18'
+		        },
+				series: [{
+		          type: "treemap",
+		          layoutAlgorithm: 'squarified',
+		          data: [{
+					name: 'ADMINISTRAÇÃO',
+					value: 29641,
+					colorValue: 1
+					},
+					{
+					name: 'ADMINISTRAÇÃO - MARKETING',
+					value: 10,
+					colorValue: 2
+					},
+					{
+					name: 'ADMINISTRAÇÃO PÚBLICA',
+					value: 196,
+					colorValue: 3
+					},
+					{
+					name: 'ANÁLISE E DESENVOLVIMENTO DE SISTEMAS',
+					value: 1416,
+					colorValue: 4
+					},
+					{
+					name: 'AQÜICULTURA',
+					value: 33,
+					colorValue: 5
+					},
+					{
+					name: 'ARQUITETURA E URBANISMO',
+					value: 3738,
+					colorValue: 6
+					},
+					{
+					name: 'ARTES VISUAIS',
+					value: 509,
+					colorValue: 7
+					},
+					{
+					name: 'AUTOMAÇÃO INDUSTRIAL',
+					value: 45,
+					colorValue: 8
+					},
+					{
+					name: 'BANCO DE DADOS',
+					value: 79,
+					colorValue: 9
+					},
+					{
+					name: 'BELEZA',
+					value: 21,
+					colorValue: 10
+					},
+					{
+					name: 'BIBLIOTECONOMIA',
+					value: 598,
+					colorValue: 11
+					},
+					{
+					name: 'BIOMEDICINA',
+					value: 1312,
+					colorValue: 12
+					},
+					{
+					name: 'CINEMA E AUDIOVISUAL',
+					value: 129,
+					colorValue: 13
+					},
+					{
+					name: 'CIÊNCIA DA COMPUTAÇÃO',
+					value: 1198,
+					colorValue: 14
+					},
+					{
+					name: 'CIÊNCIA E TECNOLOGIA',
+					value: 11072,
+					colorValue: 15
+					},
+					{
+					name: 'CIÊNCIAS AERONÁUTICAS',
+					value: 13,
+					colorValue: 16
+					},
+					{
+					name: 'CIÊNCIAS ATUARIAIS',
+					value: 326,
+					colorValue: 17
+					},
+					{
+					name: 'CIÊNCIAS BIOLÓGICAS',
+					value: 5120,
+					colorValue: 18
+					},
+					{
+					name: 'CIÊNCIAS CONTÁBEIS',
+					value: 18696,
+					colorValue: 19
+					},
+					{
+					name: 'CIÊNCIAS DA RELIGIÃO',
+					value: 625,
+					colorValue: 20
+					},
+					{
+					name: 'CIÊNCIAS ECONÔMICAS',
+					value: 1419,
+					colorValue: 21
+					},
+					{
+					name: 'CIÊNCIAS SOCIAIS',
+					value: 1660,
+					colorValue: 22
+					},
+					{
+					name: 'CIÊNCIAS SOCIAIS - ANTROPOLOGIA',
+					value: 2,
+					colorValue: 23
+					},
+					{
+					name: 'CIÊNCIAS SOCIAIS - ANTROPOLOGIA E SOCIOLOGIA',
+					value: 1,
+					colorValue: 24
+					},
+					{
+					name: 'CIÊNCIAS SOCIAIS - POLÍTICA',
+					value: 3,
+					colorValue: 25
+					},
+					{
+					name: 'CIÊNCIAS SOCIAIS - POLÍTICA E SOCIOLOGIA',
+					value: 2,
+					colorValue: 26
+					},
+					{
+					name: 'CIÊNCIAS SOCIAIS - POLÍTICA E SOCIOLOGIA - POLÍTICA E SOCIOLOGIA',
+					value: 1,
+					colorValue: 27
+					},
+					{
+					name: 'CIÊNCIAS SOCIAIS - SOCIOLOGIA',
+					value: 7,
+					colorValue: 28
+					},
+					{
+					name: 'COMPUTAÇÃO',
+					value: 3,
+					colorValue: 29
+					},
+					{
+					name: 'COMUNICAÇÃO SOCIAL',
+					value: 1036,
+					colorValue: 30
+					},
+					{
+					name: 'COMUNICAÇÃO SOCIAL - JORNALISMO',
+					value: 1428,
+					colorValue: 31
+					},
+					{
+					name: 'COMUNICAÇÃO SOCIAL - PUBLICIDADE E PROPAGANDA',
+					value: 2345,
+					colorValue: 32
+					},
+					{
+					name: 'COMUNICAÇÃO SOCIAL - RADIALISMO',
+					value: 944,
+					colorValue: 33
+					},
+					{
+					name: 'COMÉRCIO EXTERIOR',
+					value: 624,
+					colorValue: 34
+					},
+					{
+					name: 'CONSTRUÇÃO DE EDIFÍCIOS',
+					value: 678,
+					colorValue: 35
+					},
+					{
+					name: 'DANÇA',
+					value: 458,
+					colorValue: 36
+					},
+					{
+					name: 'DESIGN',
+					value: 617,
+					colorValue: 37
+					},
+					{
+					name: 'DESIGN DE INTERIORES',
+					value: 1539,
+					colorValue: 38
+					},
+					{
+					name: 'DESIGN GRÁFICO',
+					value: 1544,
+					colorValue: 39
+					},
+					{
+					name: 'DIREITO',
+					value: 36826,
+					colorValue: 40
+					},
+					{
+					name: 'ECOLOGIA',
+					value: 979,
+					colorValue: 41
+					},
+					{
+					name: 'EDUCAÇÃO ARTÍSTICA',
+					value: 7,
+					colorValue: 42
+					},
+					{
+					name: 'EDUCAÇÃO ARTÍSTICA - ARTES CÊNICAS',
+					value: 9,
+					colorValue: 43
+					},
+					{
+					name: 'EDUCAÇÃO ARTÍSTICA - ARTES PLÁSTICAS',
+					value: 4,
+					colorValue: 44
+					},
+					{
+					name: 'EDUCAÇÃO FÍSICA',
+					value: 9323,
+					colorValue: 45
+					},
+					{
+					name: 'ENFERMAGEM',
+					value: 17339,
+					colorValue: 46
+					},
+					{
+					name: 'ENGENHARIA AMBIENTAL',
+					value: 69,
+					colorValue: 47
+					},
+					{
+					name: 'ENGENHARIA AMBIENTAL E SANITÁRIA',
+					value: 133,
+					colorValue: 48
+					},
+					{
+					name: 'ENGENHARIA BIOMÉDICA',
+					value: 20,
+					colorValue: 49
+					},
+					{
+					name: 'ENGENHARIA CIVIL',
+					value: 12513,
+					colorValue: 50
+					},
+					{
+					name: 'ENGENHARIA DA COMPUTAÇÃO',
+					value: 416,
+					colorValue: 51
+					},
+					{
+					name: 'ENGENHARIA DA COMPUTAÇÃO - AUTOMAÇÃO INDUSTRIAL',
+					value: 203,
+					colorValue: 52
+					},
+					{
+					name: 'ENGENHARIA DA COMPUTAÇÃO - SISTEMAS E COMPUTAÇÃO',
+					value: 3,
+					colorValue: 53
+					},
+					{
+					name: 'ENGENHARIA DE ALIMENTOS',
+					value: 754,
+					colorValue: 54
+					},
+					{
+					name: 'ENGENHARIA DE AQUICULTURA',
+					value: 370,
+					colorValue: 55
+					},
+					{
+					name: 'ENGENHARIA DE COMPUTAÇÃO',
+					value: 808,
+					colorValue: 56
+					},
+					{
+					name: 'ENGENHARIA DE MATERIAIS',
+					value: 192,
+					colorValue: 57
+					},
+					{
+					name: 'ENGENHARIA DE PETRÓLEO',
+					value: 342,
+					colorValue: 58
+					},
+					{
+					name: 'ENGENHARIA DE PETRÓLEO E GÁS',
+					value: 1583,
+					colorValue: 59
+					},
+					{
+					name: 'ENGENHARIA DE PRODUÇÃO',
+					value: 2461,
+					colorValue: 60
+					},
+					{
+					name: 'ENGENHARIA DE SOFTWARE',
+					value: 249,
+					colorValue: 61
+					},
+					{
+					name: 'ENGENHARIA DE TELECOMUNICAÇÕES',
+					value: 27,
+					colorValue: 62
+					},
+					{
+					name: 'ENGENHARIA ELÉTRICA',
+					value: 2052,
+					colorValue: 63
+					},
+					{
+					name: 'ENGENHARIA MECATRÔNICA',
+					value: 33,
+					colorValue: 64
+					},
+					{
+					name: 'ENGENHARIA MECÂNICA',
+					value: 1214,
+					colorValue: 65
+					},
+					{
+					name: 'ENGENHARIA QUÍMICA',
+					value: 1348,
+					colorValue: 66
+					},
+					{
+					name: 'ENGENHARIA TÊXTIL',
+					value: 862,
+					colorValue: 67
+					},
+					{
+					name: 'ESTATÍSTICA',
+					value: 460,
+					colorValue: 68
+					},
+					{
+					name: 'ESTÉTICA',
+					value: 353,
+					colorValue: 69
+					},
+					{
+					name: 'ESTÉTICA E COSMÉTICA',
+					value: 1518,
+					colorValue: 70
+					},
+					{
+					name: 'ESTÉTICA E IMAGEM PESSOAL',
+					value: 14,
+					colorValue: 71
+					},
+					{
+					name: 'FABRICAÇÃO MECÂNICA',
+					value: 74,
+					colorValue: 72
+					},
+					{
+					name: 'FARMÁCIA',
+					value: 4526,
+					colorValue: 73
+					},
+					{
+					name: 'FILOSOFIA',
+					value: 1041,
+					colorValue: 74
+					},
+					{
+					name: 'FISIOTERAPIA',
+					value: 7243,
+					colorValue: 75
+					},
+					{
+					name: 'FONOAUDIOLOGIA',
+					value: 1042,
+					colorValue: 76
+					},
+					{
+					name: 'FÍSICA',
+					value: 1500,
+					colorValue: 77
+					},
+					{
+					name: 'GASTRONOMIA',
+					value: 3721,
+					colorValue: 78
+					},
+					{
+					name: 'GEOFISICA',
+					value: 526,
+					colorValue: 79
+					},
+					{
+					name: 'GEOGRAFIA',
+					value: 2122,
+					colorValue: 80
+					},
+					{
+					name: 'GEOLOGIA',
+					value: 660,
+					colorValue: 81
+					},
+					{
+					name: 'GESTÃO AMBIENTAL',
+					value: 1411,
+					colorValue: 82
+					},
+					{
+					name: 'GESTÃO COMERCIAL',
+					value: 2840,
+					colorValue: 83
+					},
+					{
+					name: 'GESTÃO DA PRODUÇÃO INDUSTRIAL',
+					value: 21,
+					colorValue: 84
+					},
+					{
+					name: 'GESTÃO DA QUALIDADE',
+					value: 146,
+					colorValue: 85
+					},
+					{
+					name: 'GESTÃO DA TECNOLOGIA DA INFORMAÇÃO',
+					value: 449,
+					colorValue: 86
+					},
+					{
+					name: 'GESTÃO DE COOPERATIVAS',
+					value: 98,
+					colorValue: 87
+					},
+					{
+					name: 'GESTÃO DE MICRO E PEQUENAS EMPRESAS',
+					value: 1,
+					colorValue: 88
+					},
+					{
+					name: 'GESTÃO DE POLÍTICAS PÚBLICAS',
+					value: 1458,
+					colorValue: 89
+					},
+					{
+					name: 'GESTÃO DE RECURSOS HUMANOS',
+					value: 7973,
+					colorValue: 90
+					},
+					{
+					name: 'GESTÃO DE SEGURANÇA PRIVADA',
+					value: 355,
+					colorValue: 91
+					},
+					{
+					name: 'GESTÃO DE SEGURANÇA PÚBLICA',
+					value: 38,
+					colorValue: 92
+					},
+					{
+					name: 'GESTÃO DE SISTEMAS DE INFORMAÇÃO',
+					value: 11,
+					colorValue: 93
+					},
+					{
+					name: 'GESTÃO DE TURISMO',
+					value: 14,
+					colorValue: 94
+					},
+					{
+					name: 'GESTÃO DESPORTIVA E DE LAZER',
+					value: 384,
+					colorValue: 95
+					},
+					{
+					name: 'GESTÃO E MARKETING DE PEQUENAS E MÉDIAS EMPRESAS',
+					value: 64,
+					colorValue: 96
+					},
+					{
+					name: 'GESTÃO EM SISTEMAS E SERVIÇOS DE SAÚDE',
+					value: 576,
+					colorValue: 97
+					},
+					{
+					name: 'GESTÃO FINANCEIRA',
+					value: 1562,
+					colorValue: 98
+					},
+					{
+					name: 'GESTÃO HOSPITALAR',
+					value: 1289,
+					colorValue: 99
+					},
+					{
+					name: 'GESTÃO PÚBLICA',
+					value: 2376,
+					colorValue: 100
+					},
+					{
+					name: 'HISTÓRIA',
+					value: 3116,
+					colorValue: 101
+					},
+					{
+					name: 'HOTELARIA',
+					value: 163,
+					colorValue: 102
+					},
+					{
+					name: 'INFORMÁTICA',
+					value: 312,
+					colorValue: 103
+					},
+					{
+					name: 'JORNALISMO',
+					value: 456,
+					colorValue: 104
+					},
+					{
+					name: 'LETRAS',
+					value: 4,
+					colorValue: 105
+					},
+					{
+					name: 'LETRAS - ESPANHOL',
+					value: 860,
+					colorValue: 106
+					},
+					{
+					name: 'LETRAS - FRANCÊS',
+					value: 166,
+					colorValue: 107
+					},
+					{
+					name: 'LETRAS - INGLÊS',
+					value: 616,
+					colorValue: 108
+					},
+					{
+					name: 'LETRAS - LIBRAS',
+					value: 93,
+					colorValue: 109
+					},
+					{
+					name: 'LETRAS - LINGUA ESPANHOLA',
+					value: 330,
+					colorValue: 110
+					},
+					{
+					name: 'LETRAS - LÍNGUA E LITERATURAS DA LÍNGUA INGLESA',
+					value: 76,
+					colorValue: 111
+					},
+					{
+					name: 'LETRAS - LÍNGUA FRANCESA E LITERATURA',
+					value: 136,
+					colorValue: 112
+					},
+					{
+					name: 'LETRAS - LÍNGUA INGLESA E RESPECTIVAS LITERATURAS',
+					value: 176,
+					colorValue: 113
+					},
+					{
+					name: 'LETRAS - LÍNGUA PORTUGUESA',
+					value: 2131,
+					colorValue: 114
+					},
+					{
+					name: 'LETRAS - LÍNGUA PORTUGUESA E LIBRAS',
+					value: 78,
+					colorValue: 115
+					},
+					{
+					name: 'LETRAS - PORTUGUÊS',
+					value: 6,
+					colorValue: 116
+					},
+					{
+					name: 'LETRAS - PORTUGUÊS E ESPANHOL',
+					value: 14,
+					colorValue: 117
+					},
+					{
+					name: 'LETRAS - PORTUGUÊS E INGLÊS',
+					value: 519,
+					colorValue: 118
+					},
+					{
+					name: 'LETRAS - PORTUGUÊS E LITERATURA',
+					value: 686,
+					colorValue: 119
+					},
+					{
+					name: 'LOGÍSTICA',
+					value: 432,
+					colorValue: 120
+					},
+					{
+					name: 'MARKETING',
+					value: 3202,
+					colorValue: 121
+					},
+					{
+					name: 'MATEMÁTICA',
+					value: 1928,
+					colorValue: 122
+					},
+					{
+					name: 'MEDICINA',
+					value: 5895,
+					colorValue: 123
+					},
+					{
+					name: 'MÚSICA',
+					value: 797,
+					colorValue: 124
+					},
+					{
+					name: 'MÚSICA - CANTO',
+					value: 35,
+					colorValue: 125
+					},
+					{
+					name: 'MÚSICA - INSTRUMENTO',
+					value: 282,
+					colorValue: 126
+					},
+					{
+					name: 'NEGÓCIOS IMOBILIÁRIOS',
+					value: 105,
+					colorValue: 127
+					},
+					{
+					name: 'NUTRIÇÃO',
+					value: 6440,
+					colorValue: 128
+					},
+					{
+					name: 'ODONTOLOGIA',
+					value: 4671,
+					colorValue: 129
+					},
+					{
+					name: 'PEDAGOGIA',
+					value: 13186,
+					colorValue: 130
+					},
+					{
+					name: 'PETRÓLEO E GÁS',
+					value: 2025,
+					colorValue: 131
+					},
+					{
+					name: 'PROCESSOS GERENCIAIS',
+					value: 237,
+					colorValue: 132
+					},
+					{
+					name: 'PRODUÇÃO CULTURAL',
+					value: 366,
+					colorValue: 133
+					},
+					{
+					name: 'PRODUÇÃO MULTIMÍDIA',
+					value: 2,
+					colorValue: 134
+					},
+					{
+					name: 'PROGRAMA ESPECIAL DE FORMAÇÃO PEDAGÓGICA PARA FORMADORES DE EDUCAÇÃO PROFISSIONAL',
+					value: 5,
+					colorValue: 135
+					},
+					{
+					name: 'PSICOLOGIA',
+					value: 9039,
+					colorValue: 136
+					},
+					{
+					name: 'PUBLICIDADE E PROPAGANDA',
+					value: 685,
+					colorValue: 137
+					},
+					{
+					name: 'PUBLICIDADE E PROPAGANDA - PUBLICIDADE E PROPAGANDA',
+					value: 315,
+					colorValue: 138
+					},
+					{
+					name: 'QUÍMICA',
+					value: 1934,
+					colorValue: 139
+					},
+					{
+					name: 'QUÍMICA DO PETRÓLEO',
+					value: 701,
+					colorValue: 140
+					},
+					{
+					name: 'REDES DE COMPUTADORES',
+					value: 2607,
+					colorValue: 141
+					},
+					{
+					name: 'RELAÇÕES INTERNACIONAIS',
+					value: 1092,
+					colorValue: 142
+					},
+					{
+					name: 'SECRETARIADO',
+					value: 351,
+					colorValue: 143
+					},
+					{
+					name: 'SEGURANÇA NO TRABALHO',
+					value: 2095,
+					colorValue: 144
+					},
+					{
+					name: 'SEGURANÇA NO TRÂNSITO',
+					value: 8,
+					colorValue: 145
+					},
+					{
+					name: 'SEGURANÇA PÚBLICA',
+					value: 28,
+					colorValue: 146
+					},
+					{
+					name: 'SERVIÇO SOCIAL',
+					value: 9507,
+					colorValue: 147
+					},
+					{
+					name: 'SERVIÇOS PENAIS',
+					value: 1,
+					colorValue: 148
+					},
+					{
+					name: 'SISTEMA DE INFORMAÇÃO',
+					value: 507,
+					colorValue: 149
+					},
+					{
+					name: 'SISTEMAS DE INFORMAÇÃO',
+					value: 1372,
+					colorValue: 150
+					},
+					{
+					name: 'SISTEMAS PARA INTERNET',
+					value: 57,
+					colorValue: 151
+					},
+					{
+					name: 'TEATRO',
+					value: 480,
+					colorValue: 152
+					},
+					{
+					name: 'TECNOLOGIA DA INFORMAÇÃO',
+					value: 266,
+					colorValue: 153
+					},
+					{
+					name: 'TEOLOGIA',
+					value: 366,
+					colorValue: 154
+					},
+					{
+					name: 'TERAPIA OCUPACIONAL',
+					value: 226,
+					colorValue: 155
+					},
+					{
+					name: 'TURISMO',
+					value: 3447,
+					colorValue: 156
+					},
+					{
+					name: 'TURISMO - GESTÃO HOTELEIRA',
+					value: 4,
+					colorValue: 157
+					},
+					{
+					name: 'WEB DESIGN E PROGRAMAÇÃO',
+					value: 4,
+					colorValue: 158
+					},
+					{
+					name: 'ZOOTECNIA',
+					value: 263,
+					colorValue: 159
+					}]
+				}],
+				title: {
+				  text: 'Número de matriculados por curso entre 2010 e 2013'
+				},
+				chart: {
+				  height: 700
+				}
+		});
+		</script>
+
+		<style type="text/css">
+			#container {
+				min-width: 300px;
+				max-width: 500px;
+				margin: 0;
+			}
+		</style>
+	</body>
+</html>
